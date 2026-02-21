@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Ultra realistic 3D website for digital marketing with shopping features",
+  "architectural_notes": [
+    "3D rendering required for ultra realistic website experience",
+    "E-commerce functionality with shopping cart integration needed"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Hero background with abstract 3D geometric shapes in deep teal and gold tones (hero-bg.dim_1920x1080.png)\n- Digital marketing services icon set showing SEO, social media, and analytics in modern minimalist style (services-icons.dim_800x400.png)\n- Featured product banner showcasing premium digital marketing package with elegant composition (featured-banner.dim_1200x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-3d-interactive-homepage-using-react-three-fiber-with-ultra-realistic-rendering-including-lighting-effects-shadows-and-smooth-camera-transitions",
+      "title": "Implement a 3D interactive homepage using React Three Fiber with ultra-realistic rendering, including lighting effects, shadows, and smooth camera transitions",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-product-catalog-system-with-browsing-filtering-and-search-capabilities-for-digital-marketing-products-and-services",
+      "title": "Create a product catalog system with browsing, filtering, and search capabilities for digital marketing products and services",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-shopping-cart-system-where-users-can-add-products-update-quantities-and-remove-items",
+      "title": "Build a shopping cart system where users can add products, update quantities, and remove items",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-checkout-flow-with-order-summary-customer-information-collection-and-order-confirmation",
+      "title": "Create a checkout flow with order summary, customer information collection, and order confirmation",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-and-implement-product-display-cards-that-integrate-into-the-3d-environment-showing-products-in-an-immersive-3d-space-with-interactive-elements",
+      "title": "Design and implement product display cards that integrate into the 3D environment, showing products in an immersive 3D space with interactive elements",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cohesive-visual-design-with-a-modern-professional-aesthetic-featuring-a-sophisticated-color-palette-of-deep-teals-warm-golds-and-charcoal-grays-elegant-typography-with-clean-sans-serif-fonts-and-a-premium-layout-that-emphasizes-depth-and-dimension-through-layering-and-strategic-use-of-shadows-and-highlights",
+      "title": "Create a cohesive visual design with a modern, professional aesthetic featuring a sophisticated color palette of deep teals, warm golds, and charcoal grays, elegant typography with clean sans-serif fonts, and a premium layout that emphasizes depth and dimension through layering and strategic use of shadows and highlights",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "3D website interface with ultra realistic visuals",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Digital marketing features",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Shopping cart and checkout system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Product catalog and browsing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Implement backend data structures and functions in Motoko to store and manage products, including product ID, name, description, price, category, and image URLs",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Implement backend order management system in Motoko to store orders, track order status, and retrieve order history",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "3d",
+  "projectName": "Digital Marketing Shop",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

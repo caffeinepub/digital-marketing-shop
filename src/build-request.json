@@ -1,0 +1,176 @@
+{
+  "kind": "build_request",
+  "title": "Create 3D digital marketing website with shopping functionality",
+  "projectName": "Digital Marketing Shop",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement a 3D interactive homepage using React Three Fiber with ultra-realistic rendering, including lighting effects, shadows, and smooth camera transitions",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create ultra realistic 3d website for digital marketing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "3D scene renders with realistic lighting and shadows",
+        "Camera movements are smooth and responsive to user interaction",
+        "Scene includes interactive 3D elements that respond to mouse hover and click"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a product catalog system with browsing, filtering, and search capabilities for digital marketing products and services",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "with all shopping features added"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products can be displayed in a grid or list view",
+        "Users can filter products by category, price range, and other attributes",
+        "Search functionality returns relevant results",
+        "Product details include images, descriptions, and pricing"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement backend data structures and functions in Motoko to store and manage products, including product ID, name, description, price, category, and image URLs",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "with all shopping features added"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product type is defined with all necessary fields",
+        "Functions exist to add, update, retrieve, and list products",
+        "Products persist across canister upgrades"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a shopping cart system where users can add products, update quantities, and remove items",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "with all shopping features added"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can add products to cart with specified quantities",
+        "Cart displays all added items with prices and subtotals",
+        "Users can update quantities or remove items from cart",
+        "Cart total is calculated correctly including all items"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a checkout flow with order summary, customer information collection, and order confirmation",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "with all shopping features added"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Checkout displays complete order summary with itemized list and total",
+        "Form collects necessary customer information (name, email, shipping address)",
+        "Order is saved to backend with unique order ID and timestamp",
+        "Confirmation page displays order details and order number"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement backend order management system in Motoko to store orders, track order status, and retrieve order history",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "with all shopping features added"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Order type includes customer info, items, total, status, and timestamp",
+        "Functions exist to create orders and retrieve order history",
+        "Orders persist across canister upgrades",
+        "Each order has a unique identifier"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Design and implement product display cards that integrate into the 3D environment, showing products in an immersive 3D space with interactive elements",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "create ultra realistic 3d website for digital marketing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products are displayed as 3D cards or objects within the Three.js scene",
+        "Product cards are interactive and respond to user input",
+        "Clicking a product opens detailed view or adds to cart",
+        "3D product displays maintain visual quality and performance"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a cohesive visual design with a modern, professional aesthetic featuring a sophisticated color palette of deep teals, warm golds, and charcoal grays, elegant typography with clean sans-serif fonts, and a premium layout that emphasizes depth and dimension through layering and strategic use of shadows and highlights",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color scheme consistently uses deep teals, warm golds, and charcoal grays throughout the interface",
+        "Typography is clean and modern with appropriate hierarchy",
+        "Layout creates depth through layering, shadows, and visual separation",
+        "Overall aesthetic feels premium and professional"
+      ]
+    }
+  ],
+  "constraints": [
+    "Must use React Three Fiber for all 3D rendering",
+    "Backend must use single-actor Motoko architecture",
+    "All state management must use React Query",
+    "Styling must use Tailwind CSS"
+  ],
+  "nonGoals": [
+    "Payment processing integration",
+    "User authentication beyond Internet Identity",
+    "Real-time inventory tracking",
+    "Email notifications",
+    "Third-party shipping integrations"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Hero background with abstract 3D geometric shapes in deep teal and gold tones (hero-bg.dim_1920x1080.png)",
+      "Digital marketing services icon set showing SEO, social media, and analytics in modern minimalist style (services-icons.dim_800x400.png)",
+      "Featured product banner showcasing premium digital marketing package with elegant composition (featured-banner.dim_1200x600.png)"
+    ],
+    "edits": []
+  }
+}
