@@ -6,6 +6,7 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Checkout from './pages/Checkout';
 import OrderConfirmation from './pages/OrderConfirmation';
+import DMCAPage from './pages/DMCAPage';
 import { Toaster } from '@/components/ui/sonner';
 
 const rootRoute = createRootRoute({
@@ -42,12 +43,19 @@ const orderConfirmationRoute = createRoute({
   component: OrderConfirmation,
 });
 
+const dmcaRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/dmca',
+  component: DMCAPage,
+});
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   productsRoute,
   productDetailRoute,
   checkoutRoute,
   orderConfirmationRoute,
+  dmcaRoute,
 ]);
 
 const router = createRouter({ routeTree });

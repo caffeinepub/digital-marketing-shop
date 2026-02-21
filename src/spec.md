@@ -1,15 +1,20 @@
 # Specification
 
 ## Summary
-**Goal:** Build a 3D digital marketing website with ultra-realistic rendering and complete shopping functionality including product browsing, cart management, and checkout.
+**Goal:** Transform the marketplace into a cyberpunk-themed digital product store with video previews, mega bundles, guest checkout, and specialized product categories.
 
 **Planned changes:**
-- Implement 3D interactive homepage using React Three Fiber with realistic lighting, shadows, and smooth camera transitions
-- Create product catalog system with browsing, filtering, and search capabilities
-- Build shopping cart system for adding, updating, and removing products
-- Implement checkout flow with customer information collection and order confirmation
-- Design backend data structures in Motoko for products and orders with persistence
-- Integrate product displays as interactive 3D cards within the Three.js scene
-- Apply cohesive visual design with deep teals, warm golds, and charcoal grays color palette
+- Replace color scheme with dark cyberpunk aesthetic (dark charcoal/matte black background, neon blue #00f3ff primary accents, electric purple #bd00ff secondary accents)
+- Update hero section with new headline "Unlock Your Creative Potential: 5000+ Premium Assets for the Price of a Pizza", subheadline "Instant Download. Lifetime Access. 100% Secure.", and CTA "Shop All Bundles"
+- Add centered search bar to navigation header with placeholder "Search for courses, bundles..."
+- Reorganize products into four categories: Viral Reels Library, Editing Suite, Masterclass Courses, and Software Tools
+- Add video preview support with auto-play on hover for product cards and detail pages
+- Implement guest checkout flow without authentication requirements
+- Create Mega Bundle section on homepage for all-in-one product upsells
+- Add "Frequently Bought Together" recommendations with one-click bundle purchase
+- Update product detail page with crossed-out original price, trust badges (Secure Payment, Instant Delivery), and sticky add-to-cart button
+- Add downloadUrl field to products and implement digital download delivery system
+- Create DMCA/Copyright page with educational disclaimers and licensing information
+- Add bullet-point product descriptions showing file details (size, format, watermark status)
 
-**User-visible outcome:** Users can explore an immersive 3D digital marketing website, browse products in an interactive 3D environment, add items to their cart, and complete purchases through a checkout flow with order confirmation.
+**User-visible outcome:** Users can browse a cyberpunk-styled digital product store with video previews, purchase products as guests without creating accounts, download digital products instantly via cloud storage links, and discover mega bundles and frequently bought together recommendations.

@@ -2,19 +2,34 @@ import Map "mo:core/Map";
 import Array "mo:core/Array";
 import Iter "mo:core/Iter";
 import Principal "mo:core/Principal";
-import Order "mo:core/Order";
-import Text "mo:core/Text";
-import Runtime "mo:core/Runtime";
 import List "mo:core/List";
+import Runtime "mo:core/Runtime";
+import Migration "migration";
+import Storage "blob-storage/Storage";
+import MixinStorage "blob-storage/Mixin";
 
+(with migration = Migration.run)
 actor {
+  include MixinStorage();
+
   public type Product = {
     id : Nat;
     name : Text;
     description : Text;
     price : Float;
-    category : Text;
+    category : Category;
     imageUrl : Text;
+    videoPreviewUrl : ?Text;
+    downloadUrl : Text;
+    isMegaBundle : Bool;
+    frequentlyBoughtTogether : [Nat];
+  };
+
+  public type Category = {
+    #viralReelsLibrary;
+    #editingSuite;
+    #masterclassCourses;
+    #softwareTools;
   };
 
   public type CartItem = {
@@ -28,6 +43,7 @@ actor {
     total : Float;
     status : Text;
     customerInfo : Text;
+    downloadLinks : [Text];
   };
 
   var productIdCounter = 0;
@@ -37,7 +53,17 @@ actor {
   let carts = Map.empty<Principal, List.List<CartItem>>();
   let orders = Map.empty<Nat, Order>();
 
-  public shared ({ caller }) func addProduct(name : Text, description : Text, price : Float, category : Text, imageUrl : Text) : async Nat {
+  public shared ({ caller }) func addProduct(
+    name : Text,
+    description : Text,
+    price : Float,
+    category : Category,
+    imageUrl : Text,
+    videoPreviewUrl : ?Text,
+    downloadUrl : Text,
+    isMegaBundle : Bool,
+    frequentlyBoughtTogether : [Nat],
+  ) : async Nat {
     let product : Product = {
       id = productIdCounter;
       name;
@@ -45,6 +71,10 @@ actor {
       price;
       category;
       imageUrl;
+      videoPreviewUrl;
+      downloadUrl;
+      isMegaBundle;
+      frequentlyBoughtTogether;
     };
     products.add(productIdCounter, product);
     productIdCounter += 1;
@@ -61,6 +91,47 @@ actor {
         product.name.toLower().contains(#text(searchTerm.toLower())) or product.description.toLower().contains(#text(searchTerm.toLower()));
       }
     );
+  };
+
+  public query ({ caller }) func getProductsByCategory(category : Category) : async [Product] {
+    products.values().toArray().filter(
+      func(product) {
+        product.category == category;
+      }
+    );
+  };
+
+  public query ({ caller }) func getMegaBundleProduct() : async ?Product {
+    products.values().toArray().find(
+      func(product) {
+        product.isMegaBundle;
+      }
+    );
+  };
+
+  public query ({ caller }) func getFrequentlyBoughtTogether(productId : Nat) : async [Product] {
+    switch (products.get(productId)) {
+      case (null) { [] };
+      case (?product) {
+        product.frequentlyBoughtTogether.map(
+          func(fbtId) {
+            switch (products.get(fbtId)) {
+              case (null) { null };
+              case (?fbtProduct) { ?fbtProduct };
+            };
+          }
+        ).filter(
+          func(p) { p != null }
+        ).map(
+          func(p) {
+            switch (p) {
+              case (null) { Runtime.trap("Unexpected null in frequently bought together products") };
+              case (?product) { product };
+            };
+          }
+        );
+      };
+    };
   };
 
   public shared ({ caller }) func addToCart(productId : Nat, quantity : Nat) : async () {
@@ -89,10 +160,6 @@ actor {
     total;
   };
 
-  func getSortComparison(status : Text, statusFilter : Text) : Bool {
-    status.toLower().contains(#text(statusFilter.toLower()));
-  };
-
   public shared ({ caller }) func checkout(customerInfo : Text) : async ?Order {
     let cart = switch (carts.get(caller)) {
       case (null) { Runtime.trap("Cart is empty") };
@@ -100,12 +167,22 @@ actor {
     };
 
     let total = calculateCartTotal(cart);
+    let downloadLinks = cart.toArray().map(
+      func(item) {
+        switch (products.get(item.productId)) {
+          case (null) { "" };
+          case (?product) { product.downloadUrl };
+        };
+      }
+    );
+
     let order : Order = {
       id = orderIdCounter;
       items = cart.toArray();
       total;
       status = "Pending";
       customerInfo;
+      downloadLinks;
     };
 
     orders.add(orderIdCounter, order);
@@ -122,12 +199,18 @@ actor {
       case (?product) { product.price * item.quantity.toFloat() };
     };
 
+    let downloadLinks = switch (products.get(item.productId)) {
+      case (null) { [] };
+      case (?product) { [product.downloadUrl] };
+    };
+
     let order : Order = {
       id = orderIdCounter;
       items = [item];
       total;
       status = "Pending";
       customerInfo;
+      downloadLinks;
     };
 
     orders.add(orderIdCounter, order);
@@ -139,4 +222,12 @@ actor {
       case (?order) { order };
     };
   };
+
+  public query ({ caller }) func getOrderDownloadLinks(orderId : Nat) : async [Text] {
+    switch (orders.get(orderId)) {
+      case (null) { [] };
+      case (?order) { order.downloadLinks };
+    };
+  };
 };
+

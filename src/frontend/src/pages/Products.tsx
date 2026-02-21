@@ -11,12 +11,6 @@ export default function Products() {
 
   const { data: allProducts, isLoading } = useProducts(searchTerm);
 
-  const categories = useMemo(() => {
-    if (!allProducts) return [];
-    const cats = new Set(allProducts.map((p) => p.category));
-    return Array.from(cats);
-  }, [allProducts]);
-
   const filteredProducts = useMemo(() => {
     if (!allProducts) return [];
     return allProducts.filter((product) => {
@@ -31,10 +25,10 @@ export default function Products() {
       <div className="container">
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4">
-            Our <span className="bg-gradient-to-r from-deepTeal-400 to-warmGold-400 bg-clip-text text-transparent">Products</span>
+            Our <span className="bg-gradient-to-r from-neonBlue-400 to-electricPurple-400 bg-clip-text text-transparent">Products</span>
           </h1>
           <p className="text-muted-foreground">
-            Browse our comprehensive collection of digital marketing solutions
+            Browse our comprehensive collection of digital assets
           </p>
         </div>
 
@@ -49,7 +43,6 @@ export default function Products() {
               onCategoryChange={setCategory}
               priceRange={priceRange}
               onPriceRangeChange={setPriceRange}
-              categories={categories}
             />
           </aside>
 

@@ -1,14 +1,21 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Ultra realistic 3D website for digital marketing with shopping features",
+  "projectStateVersion": 5,
+  "summary": "Digital product marketplace for selling Instagram Reel bundles, video editing presets, courses, and software with dark cyberpunk aesthetic and guest checkout",
   "architectural_notes": [
     "3D rendering required for ultra realistic website experience",
-    "E-commerce functionality with shopping cart integration needed"
+    "E-commerce functionality with shopping cart integration needed",
+    "Dark mode UI with neon blue (#00f3ff) and electric purple (#bd00ff) accents for cyberpunk aesthetic",
+    "Digital products delivered via cloud storage links (Google Drive/Mega.nz) embedded in PDFs to avoid hosting large files",
+    "Guest checkout enabled for instant purchase without account creation",
+    "Mobile-first optimization required (80% traffic expected from mobile)",
+    "Video preview system with auto-play on hover for product demonstrations",
+    "Payment gateway integration: Razorpay/PhonePe (India UPI), Stripe/PayPal (global)",
+    "Bundle pricing strategy with upsell mechanisms and 'Frequently Bought Together' features"
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Hero background with abstract 3D geometric shapes in deep teal and gold tones (hero-bg.dim_1920x1080.png)\n- Digital marketing services icon set showing SEO, social media, and analytics in modern minimalist style (services-icons.dim_800x400.png)\n- Featured product banner showcasing premium digital marketing package with elegant composition (featured-banner.dim_1200x600.png)",
+  "imageRequirements": "## Required Images\n- Dark cyberpunk collage featuring video editing timeline interfaces, Instagram reel mockups, and digital product box art with neon blue and electric purple accents (hero-collage.dim_1920x800.png)\n- Secure payment trust badge icon with lock symbol and neon blue glow effect (trust-badge-secure.dim_64x64.png)\n- Instant delivery trust badge icon with lightning bolt and electric purple glow effect (trust-badge-instant.dim_64x64.png)\n- Viral Reels Library category icon with play button and neon accents (category-reels.dim_128x128.png)\n- Editing Suite category icon with editing tools and gradient effects (category-editing.dim_128x128.png)\n- Masterclass Courses category icon with graduation cap and tech elements (category-courses.dim_128x128.png)\n- Software Tools category icon with gear and digital motifs (category-software.dim_128x128.png)",
   "existing_features": [
     {
       "id": "feature-implement-a-3d-interactive-homepage-using-react-three-fiber-with-ultra-realistic-rendering-including-lighting-effects-shadows-and-smooth-camera-transitions",
@@ -57,6 +64,102 @@
         "REQ-8"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-replace-the-existing-color-scheme-with-a-dark-cyberpunk-aesthetic-dark-charcoal-or-deep-matte-black-background-1a1a1a-neon-blue-accents-00f3ff-for-primary-buttons-and-highlights-electric-purple-accents-bd00ff-for-secondary-buttons-and-hover-states-maintaining-the-existing-deep-teal-warm-gold-and-charcoal-gray-colors-only-for-subtle-gradients-where-appropriate",
+      "title": "Replace the existing color scheme with a dark cyberpunk aesthetic: dark charcoal or deep matte black background (#1a1a1a), neon blue accents (#00f3ff) for primary buttons and highlights, electric purple accents (#bd00ff) for secondary buttons and hover states, maintaining the existing deep teal, warm gold, and charcoal gray colors only for subtle gradients where appropriate",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-hero-section-headline-to-unlock-your-creative-potential-5000-premium-assets-for-the-price-of-a-pizza-and-subheadline-to-instant-download-lifetime-access-100-secure-with-the-cta-button-text-changed-to-shop-all-bundles",
+      "title": "Update the hero section headline to 'Unlock Your Creative Potential: 5000+ Premium Assets for the Price of a Pizza' and subheadline to 'Instant Download. Lifetime Access. 100% Secure.' with the CTA button text changed to 'Shop All Bundles'",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-centered-search-bar-to-the-navigation-header-with-placeholder-text-search-for-courses-bundles-positioned-between-the-logo-and-cart-icon",
+      "title": "Add a centered search bar to the navigation header with placeholder text 'Search for courses, bundles...' positioned between the logo and cart icon",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reorganize-product-categories-into-four-specific-categories-viral-reels-library-ai-motivation-luxury-lifestyle-editing-suite-luts-prpro-templates-sfx-masterclass-courses-marketing-coding-ai-and-software-tools-updating-both-the-backend-product-data-structure-and-frontend-category-filters",
+      "title": "Reorganize product categories into four specific categories: 'Viral Reels Library' (AI Motivation, Luxury Lifestyle), 'Editing Suite' (LUTs, PRPRO Templates, SFX), 'Masterclass Courses' (Marketing, Coding, AI), and 'Software Tools', updating both the backend product data structure and frontend category filters",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-video-preview-support-to-product-cards-and-product-detail-pages-with-auto-play-on-hover-functionality-storing-video-urls-in-the-backend-product-data-structure",
+      "title": "Add video preview support to product cards and product detail pages with auto-play on hover functionality, storing video URLs in the backend product data structure",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-guest-checkout-flow-that-allows-users-to-complete-purchases-without-creating-an-account-or-logging-in-removing-any-authentication-requirements-from-the-checkout-process",
+      "title": "Implement guest checkout flow that allows users to complete purchases without creating an account or logging in, removing any authentication requirements from the checkout process",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-mega-bundle-section-on-the-homepage-displaying-an-all-in-one-product-bundle-with-prominent-upsell-messaging-and-visual-emphasis-positioned-between-the-hero-section-and-featured-products",
+      "title": "Create a 'Mega Bundle' section on the homepage displaying an all-in-one product bundle with prominent upsell messaging and visual emphasis, positioned between the hero section and featured products",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-frequently-bought-together-recommendation-section-to-product-detail-pages-showing-complementary-products-with-a-one-click-option-to-add-the-bundle-to-cart",
+      "title": "Add 'Frequently Bought Together' recommendation section to product detail pages showing complementary products with a one-click option to add the bundle to cart",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-product-detail-page-layout-to-show-crossed-out-original-price-next-to-sale-price-add-trust-badges-for-secure-payment-and-instant-delivery-and-make-the-add-to-cart-button-sticky-when-scrolling",
+      "title": "Update product detail page layout to show crossed-out original price next to sale price, add trust badges for 'Secure Payment' and 'Instant Delivery', and make the add-to-cart button sticky when scrolling",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-downloadurl-field-to-the-backend-product-data-structure-and-implement-a-digital-download-delivery-system-where-completed-orders-provide-users-with-download-links-to-access-their-purchased-digital-products",
+      "title": "Add a downloadUrl field to the backend product data structure and implement a digital download delivery system where completed orders provide users with download links to access their purchased digital products",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-dmca-copyright-page-accessible-from-the-footer-with-legal-disclaimers-stating-products-are-for-educational-purposes-information-about-gpl-licensing-for-software-and-resell-rights-bundle-policies",
+      "title": "Create a DMCA/Copyright page accessible from the footer with legal disclaimers stating products are for educational purposes, information about GPL licensing for software, and resell rights bundle policies",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-bullet-point-product-descriptions-to-product-detail-pages-showing-exactly-what-files-are-included-in-each-product-e-g-file-size-format-watermark-status",
+      "title": "Add bullet-point product descriptions to product detail pages showing exactly what files are included in each product (e.g., file size, format, watermark status)",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -98,6 +201,66 @@
       "reqIds": [
         "REQ-6"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Implement dark mode design with neon blue and electric purple accents (cyberpunk aesthetic)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add guest checkout functionality (no login required)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Implement video preview functionality for products with auto-play on hover",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Create mega bundle section for upsells with 'Frequently Bought Together' feature",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Add payment gateway integration (Razorpay, PhonePe, Stripe, PayPal)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Implement digital download system with cloud storage links (Google Drive/Mega.nz via PDF delivery)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Add search bar functionality in header for courses and bundles",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Create product categories: Viral Reels Library, Editing Suite, Masterclass Courses, Software Tools",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Implement sticky 'Add to Cart' button and trust badges on product pages",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Add DMCA/Copyright page and legal disclaimers",
+      "reqIds": [],
       "status": "pending"
     }
   ],

@@ -1,175 +1,265 @@
 {
   "kind": "build_request",
-  "title": "Create 3D digital marketing website with shopping functionality",
-  "projectName": "Digital Marketing Shop",
+  "title": "Transform marketplace into cyberpunk-themed digital product store with video previews, mega bundles, and guest checkout",
+  "projectName": "Creator Vault",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Implement a 3D interactive homepage using React Three Fiber with ultra-realistic rendering, including lighting effects, shadows, and smooth camera transitions",
+      "id": "REQ-9",
+      "text": "Replace the existing color scheme with a dark cyberpunk aesthetic: dark charcoal or deep matte black background (#1a1a1a), neon blue accents (#00f3ff) for primary buttons and highlights, electric purple accents (#bd00ff) for secondary buttons and hover states, maintaining the existing deep teal, warm gold, and charcoal gray colors only for subtle gradients where appropriate",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-latest"
         ],
         "quotes": [
-          "create ultra realistic 3d website for digital marketing"
+          "Background: Dark charcoal or deep matte black. Accents: Neon Blue (#00f3ff) and Electric Purple (#bd00ff) for buttons and highlights."
         ]
       },
       "acceptanceCriteria": [
-        "3D scene renders with realistic lighting and shadows",
-        "Camera movements are smooth and responsive to user interaction",
-        "Scene includes interactive 3D elements that respond to mouse hover and click"
+        "Background colors changed to dark charcoal/matte black throughout the application",
+        "Primary action buttons use neon blue (#00f3ff)",
+        "Secondary actions and hover states use electric purple (#bd00ff)",
+        "Color changes applied consistently across all pages and components"
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Create a product catalog system with browsing, filtering, and search capabilities for digital marketing products and services",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "with all shopping features added"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Products can be displayed in a grid or list view",
-        "Users can filter products by category, price range, and other attributes",
-        "Search functionality returns relevant results",
-        "Product details include images, descriptions, and pricing"
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Implement backend data structures and functions in Motoko to store and manage products, including product ID, name, description, price, category, and image URLs",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "with all shopping features added"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Product type is defined with all necessary fields",
-        "Functions exist to add, update, retrieve, and list products",
-        "Products persist across canister upgrades"
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Build a shopping cart system where users can add products, update quantities, and remove items",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "with all shopping features added"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Users can add products to cart with specified quantities",
-        "Cart displays all added items with prices and subtotals",
-        "Users can update quantities or remove items from cart",
-        "Cart total is calculated correctly including all items"
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Create a checkout flow with order summary, customer information collection, and order confirmation",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "with all shopping features added"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Checkout displays complete order summary with itemized list and total",
-        "Form collects necessary customer information (name, email, shipping address)",
-        "Order is saved to backend with unique order ID and timestamp",
-        "Confirmation page displays order details and order number"
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Implement backend order management system in Motoko to store orders, track order status, and retrieve order history",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "with all shopping features added"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Order type includes customer info, items, total, status, and timestamp",
-        "Functions exist to create orders and retrieve order history",
-        "Orders persist across canister upgrades",
-        "Each order has a unique identifier"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Design and implement product display cards that integrate into the 3D environment, showing products in an immersive 3D space with interactive elements",
+      "id": "REQ-10",
+      "text": "Update the hero section headline to 'Unlock Your Creative Potential: 5000+ Premium Assets for the Price of a Pizza' and subheadline to 'Instant Download. Lifetime Access. 100% Secure.' with the CTA button text changed to 'Shop All Bundles'",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-latest"
         ],
         "quotes": [
-          "create ultra realistic 3d website for digital marketing"
+          "Headline: 'Unlock Your Creative Potential: 5000+ Premium Assets for the Price of a Pizza.' Sub-headline: 'Instant Download. Lifetime Access. 100% Secure.' CTA Button: 'Shop All Bundles.'"
         ]
       },
       "acceptanceCriteria": [
-        "Products are displayed as 3D cards or objects within the Three.js scene",
-        "Product cards are interactive and respond to user input",
-        "Clicking a product opens detailed view or adds to cart",
-        "3D product displays maintain visual quality and performance"
+        "Hero section displays the new headline with emphasis on creative potential",
+        "Subheadline includes instant download, lifetime access, and security messaging",
+        "CTA button text reads 'Shop All Bundles' and navigates to products page"
       ]
     },
     {
-      "id": "REQ-8",
-      "text": "Create a cohesive visual design with a modern, professional aesthetic featuring a sophisticated color palette of deep teals, warm golds, and charcoal grays, elegant typography with clean sans-serif fonts, and a premium layout that emphasizes depth and dimension through layering and strategic use of shadows and highlights",
+      "id": "REQ-11",
+      "text": "Add a centered search bar to the navigation header with placeholder text 'Search for courses, bundles...' positioned between the logo and cart icon",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-latest"
+        ],
+        "quotes": [
+          "Header: Logo (left), Search bar (center - 'Search for courses, bundles...'), Cart icon, 'My Account.'"
         ]
       },
       "acceptanceCriteria": [
-        "Color scheme consistently uses deep teals, warm golds, and charcoal grays throughout the interface",
-        "Typography is clean and modern with appropriate hierarchy",
-        "Layout creates depth through layering, shadows, and visual separation",
-        "Overall aesthetic feels premium and professional"
+        "Search bar appears in the center of the navigation header",
+        "Placeholder text reads 'Search for courses, bundles...'",
+        "Search bar integrates with existing product search functionality",
+        "Layout remains responsive on mobile devices"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Reorganize product categories into four specific categories: 'Viral Reels Library' (AI Motivation, Luxury Lifestyle), 'Editing Suite' (LUTs, PRPRO Templates, SFX), 'Masterclass Courses' (Marketing, Coding, AI), and 'Software Tools', updating both the backend product data structure and frontend category filters",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Category 1: Viral Reels Library (AI Motivation, Luxury Lifestyle). Category 2: Editing Suite (LUTs, PRPRO Templates, SFX). Category 3: Masterclass Courses (Marketing, Coding, AI). Category 4: Software Tools."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend product type includes the four new category options",
+        "Frontend category filter dropdown shows all four categories",
+        "Products can be assigned to one of the four new categories",
+        "Category badges on product cards display the updated category names"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add video preview support to product cards and product detail pages with auto-play on hover functionality, storing video URLs in the backend product data structure",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Previews: You need video previews for reels and courses. Do not just use static images.",
+          "Left Side: Carousel with video preview of the content (auto-play on hover)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend product data structure includes a videoUrl field",
+        "Product cards display video preview when hovering over the card area",
+        "Product detail page shows video preview in a carousel that auto-plays on hover",
+        "Video elements include proper controls and fallback to static images when no video is available"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Implement guest checkout flow that allows users to complete purchases without creating an account or logging in, removing any authentication requirements from the checkout process",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "No Login Checkout: Allow 'Guest Checkout.' People want to buy and get the link instantly without creating an account."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can access checkout page without authentication",
+        "Checkout form collects email for order confirmation without requiring account creation",
+        "Order confirmation page is accessible without login",
+        "No authentication prompts appear during the checkout flow"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Create a 'Mega Bundle' section on the homepage displaying an all-in-one product bundle with prominent upsell messaging and visual emphasis, positioned between the hero section and featured products",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Include a 'Mega Bundle' section on the homepage for upsells.",
+          "Bundling: The money is in the 'All-in-One' bundle."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage includes a dedicated Mega Bundle section with eye-catching design",
+        "Section displays the bundle product with special pricing and value proposition",
+        "Backend supports bundle product type with references to included products",
+        "Section appears prominently on homepage with clear call-to-action"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Add 'Frequently Bought Together' recommendation section to product detail pages showing complementary products with a one-click option to add the bundle to cart",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Make sure your site supports 'Frequently Bought Together' or 'One-Click Upsells.'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product detail page displays related products in a 'Frequently Bought Together' section",
+        "Section includes a bundled price calculation showing savings",
+        "Users can add all recommended products to cart with one click",
+        "Backend tracks product relationships for recommendations"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Update product detail page layout to show crossed-out original price next to sale price, add trust badges for 'Secure Payment' and 'Instant Delivery', and make the add-to-cart button sticky when scrolling",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Right Side: Title, Price (Crossed out original price vs. Sale price), 'Add to Cart' (Sticky button), Trust Badges (Secure Payment, Instant Delivery)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product price displays with original price struck through and sale price emphasized",
+        "Trust badge icons for secure payment and instant delivery appear near the add-to-cart button",
+        "Add-to-cart button becomes sticky and remains visible when scrolling down the page",
+        "Layout maintains visual hierarchy with price and trust elements prominently displayed"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Add a downloadUrl field to the backend product data structure and implement a digital download delivery system where completed orders provide users with download links to access their purchased digital products",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Solution: Host files on Google Drive (make sure sharing is set to 'Anyone with link') or Mega.nz, then put that link in a PDF, and sell the PDF as the digital product."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend product type includes downloadUrl field for storing cloud storage links",
+        "Order confirmation page displays download links for purchased products",
+        "Download links are only accessible after successful order completion",
+        "System supports external links to Google Drive, Mega.nz, or similar cloud storage"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Create a DMCA/Copyright page accessible from the footer with legal disclaimers stating products are for educational purposes, information about GPL licensing for software, and resell rights bundle policies",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Include a clear 'DMCA / Copyright' page in your footer. State clearly: 'This software is for educational purposes.'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer includes link to DMCA/Copyright page",
+        "Page contains educational purpose disclaimer",
+        "Page explains GPL licensing for applicable software",
+        "Page describes resell rights bundle policies and legal usage terms"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Add bullet-point product descriptions to product detail pages showing exactly what files are included in each product (e.g., file size, format, watermark status)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Description: Bullet points highlighting exactly what files are included (e.g., '100GB Data,' 'MP4 Format,' 'No Watermark')."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product detail page displays description as formatted bullet points",
+        "Each bullet point clearly states what is included (file size, format, quality)",
+        "Description section is visually distinct and easy to scan",
+        "Backend product data structure supports detailed description text with formatting"
       ]
     }
   ],
   "constraints": [
-    "Must use React Three Fiber for all 3D rendering",
-    "Backend must use single-actor Motoko architecture",
-    "All state management must use React Query",
-    "Styling must use Tailwind CSS"
+    "Do not integrate with WordPress, WooCommerce, Shopify, or any external e-commerce platforms",
+    "Do not implement actual payment gateway integrations (Razorpay, PhonePe, Stripe, PayPal) as these require external service connections not supported by the platform",
+    "Do not host or upload actual large files (courses, reels) to the application storage",
+    "Do not implement real-time WebSocket features for notifications",
+    "All payment and file hosting must be represented through UI elements and data structures only"
   ],
   "nonGoals": [
-    "Payment processing integration",
-    "User authentication beyond Internet Identity",
-    "Real-time inventory tracking",
-    "Email notifications",
-    "Third-party shipping integrations"
+    "Building a WordPress or Shopify integration",
+    "Implementing live payment processing with external gateways",
+    "Creating actual file storage or hosting for digital products",
+    "Building an admin dashboard for product management",
+    "Implementing user accounts or login system (guest checkout only)",
+    "Creating a mobile app version",
+    "Adding social media login options",
+    "Implementing real-time inventory tracking"
   ],
   "imageRequirements": {
     "required": [
-      "Hero background with abstract 3D geometric shapes in deep teal and gold tones (hero-bg.dim_1920x1080.png)",
-      "Digital marketing services icon set showing SEO, social media, and analytics in modern minimalist style (services-icons.dim_800x400.png)",
-      "Featured product banner showcasing premium digital marketing package with elegant composition (featured-banner.dim_1200x600.png)"
+      "Dark cyberpunk collage featuring video editing timeline interfaces, Instagram reel mockups, and digital product box art with neon blue and electric purple accents (hero-collage.dim_1920x800.png)",
+      "Secure payment trust badge icon with lock symbol and neon blue glow effect (trust-badge-secure.dim_64x64.png)",
+      "Instant delivery trust badge icon with lightning bolt and electric purple glow effect (trust-badge-instant.dim_64x64.png)",
+      "Viral Reels Library category icon with play button and neon accents (category-reels.dim_128x128.png)",
+      "Editing Suite category icon with editing tools and gradient effects (category-editing.dim_128x128.png)",
+      "Masterclass Courses category icon with graduation cap and tech elements (category-courses.dim_128x128.png)",
+      "Software Tools category icon with gear and digital motifs (category-software.dim_128x128.png)"
     ],
     "edits": []
   }

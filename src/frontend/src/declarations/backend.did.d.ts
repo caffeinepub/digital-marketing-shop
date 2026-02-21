@@ -11,27 +11,79 @@ import type { IDL } from '@icp-sdk/core/candid';
 import type { Principal } from '@icp-sdk/core/principal';
 
 export interface CartItem { 'productId' : bigint, 'quantity' : bigint }
+export type Category = { 'viralReelsLibrary' : null } |
+  { 'editingSuite' : null } |
+  { 'masterclassCourses' : null } |
+  { 'softwareTools' : null };
 export interface Order {
   'id' : bigint,
   'customerInfo' : string,
   'status' : string,
   'total' : number,
   'items' : Array<CartItem>,
+  'downloadLinks' : Array<string>,
 }
 export interface Product {
   'id' : bigint,
   'name' : string,
   'description' : string,
+  'downloadUrl' : string,
   'imageUrl' : string,
-  'category' : string,
+  'frequentlyBoughtTogether' : Array<bigint>,
+  'category' : Category,
+  'isMegaBundle' : boolean,
   'price' : number,
+  'videoPreviewUrl' : [] | [string],
+}
+export interface _CaffeineStorageCreateCertificateResult {
+  'method' : string,
+  'blob_hash' : string,
+}
+export interface _CaffeineStorageRefillInformation {
+  'proposed_top_up_amount' : [] | [bigint],
+}
+export interface _CaffeineStorageRefillResult {
+  'success' : [] | [boolean],
+  'topped_up_amount' : [] | [bigint],
 }
 export interface _SERVICE {
+  '_caffeineStorageBlobIsLive' : ActorMethod<[Uint8Array], boolean>,
+  '_caffeineStorageBlobsToDelete' : ActorMethod<[], Array<Uint8Array>>,
+  '_caffeineStorageConfirmBlobDeletion' : ActorMethod<
+    [Array<Uint8Array>],
+    undefined
+  >,
+  '_caffeineStorageCreateCertificate' : ActorMethod<
+    [string],
+    _CaffeineStorageCreateCertificateResult
+  >,
+  '_caffeineStorageRefillCashier' : ActorMethod<
+    [[] | [_CaffeineStorageRefillInformation]],
+    _CaffeineStorageRefillResult
+  >,
+  '_caffeineStorageUpdateGatewayPrincipals' : ActorMethod<[], undefined>,
   'addOrder' : ActorMethod<[CartItem, string], Order>,
-  'addProduct' : ActorMethod<[string, string, number, string, string], bigint>,
+  'addProduct' : ActorMethod<
+    [
+      string,
+      string,
+      number,
+      Category,
+      string,
+      [] | [string],
+      string,
+      boolean,
+      Array<bigint>,
+    ],
+    bigint
+  >,
   'addToCart' : ActorMethod<[bigint, bigint], undefined>,
   'checkout' : ActorMethod<[string], [] | [Order]>,
+  'getFrequentlyBoughtTogether' : ActorMethod<[bigint], Array<Product>>,
+  'getMegaBundleProduct' : ActorMethod<[], [] | [Product]>,
+  'getOrderDownloadLinks' : ActorMethod<[bigint], Array<string>>,
   'getProduct' : ActorMethod<[bigint], [] | [Product]>,
+  'getProductsByCategory' : ActorMethod<[Category], Array<Product>>,
   'searchProducts' : ActorMethod<[string], Array<Product>>,
 }
 export declare const idlService: IDL.ServiceClass;

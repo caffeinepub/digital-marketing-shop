@@ -27,9 +27,10 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
   } = useForm<CheckoutFormData>();
 
   return (
-    <Card className="border-border/50 bg-card/50 backdrop-blur">
+    <Card className="border-neonBlue-500/20 bg-card/50 backdrop-blur">
       <CardHeader>
-        <CardTitle>Shipping Information</CardTitle>
+        <CardTitle className="text-neonBlue-400">Contact Information</CardTitle>
+        <p className="text-sm text-muted-foreground">No account needed - we'll email your download links</p>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -39,6 +40,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
               id="name"
               {...register('name', { required: 'Name is required' })}
               placeholder="John Doe"
+              className="border-neonBlue-500/30"
             />
             {errors.name && (
               <p className="text-sm text-destructive">{errors.name.message}</p>
@@ -46,7 +48,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email *</Label>
+            <Label htmlFor="email">Email Address *</Label>
             <Input
               id="email"
               type="email"
@@ -58,83 +60,75 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
                 },
               })}
               placeholder="john@example.com"
+              className="border-neonBlue-500/30"
             />
             {errors.email && (
               <p className="text-sm text-destructive">{errors.email.message}</p>
             )}
+            <p className="text-xs text-muted-foreground">We'll send your download links to this email</p>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="street">Street Address *</Label>
+            <Label htmlFor="street">Street Address (Optional)</Label>
             <Input
               id="street"
-              {...register('street', { required: 'Street address is required' })}
+              {...register('street')}
               placeholder="123 Main St"
+              className="border-neonBlue-500/30"
             />
-            {errors.street && (
-              <p className="text-sm text-destructive">{errors.street.message}</p>
-            )}
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="city">City *</Label>
+              <Label htmlFor="city">City (Optional)</Label>
               <Input
                 id="city"
-                {...register('city', { required: 'City is required' })}
+                {...register('city')}
                 placeholder="New York"
+                className="border-neonBlue-500/30"
               />
-              {errors.city && (
-                <p className="text-sm text-destructive">{errors.city.message}</p>
-              )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="state">State *</Label>
+              <Label htmlFor="state">State (Optional)</Label>
               <Input
                 id="state"
-                {...register('state', { required: 'State is required' })}
+                {...register('state')}
                 placeholder="NY"
+                className="border-neonBlue-500/30"
               />
-              {errors.state && (
-                <p className="text-sm text-destructive">{errors.state.message}</p>
-              )}
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="postalCode">Postal Code *</Label>
+              <Label htmlFor="postalCode">Postal Code (Optional)</Label>
               <Input
                 id="postalCode"
-                {...register('postalCode', { required: 'Postal code is required' })}
+                {...register('postalCode')}
                 placeholder="10001"
+                className="border-neonBlue-500/30"
               />
-              {errors.postalCode && (
-                <p className="text-sm text-destructive">{errors.postalCode.message}</p>
-              )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="country">Country *</Label>
+              <Label htmlFor="country">Country (Optional)</Label>
               <Input
                 id="country"
-                {...register('country', { required: 'Country is required' })}
+                {...register('country')}
                 placeholder="USA"
+                className="border-neonBlue-500/30"
               />
-              {errors.country && (
-                <p className="text-sm text-destructive">{errors.country.message}</p>
-              )}
             </div>
           </div>
 
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-deepTeal-500 to-deepTeal-600 hover:from-deepTeal-600 hover:to-deepTeal-700"
+            className="w-full bg-gradient-to-r from-neonBlue-500 to-neonBlue-600 hover:from-neonBlue-600 hover:to-neonBlue-700 shadow-neon-blue font-bold"
             size="lg"
           >
-            {isSubmitting ? 'Processing...' : 'Place Order'}
+            {isSubmitting ? 'Processing...' : 'Complete Purchase'}
           </Button>
         </form>
       </CardContent>

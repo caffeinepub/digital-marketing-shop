@@ -8,6 +8,17 @@
 
 import { IDL } from '@icp-sdk/core/candid';
 
+export const _CaffeineStorageCreateCertificateResult = IDL.Record({
+  'method' : IDL.Text,
+  'blob_hash' : IDL.Text,
+});
+export const _CaffeineStorageRefillInformation = IDL.Record({
+  'proposed_top_up_amount' : IDL.Opt(IDL.Nat),
+});
+export const _CaffeineStorageRefillResult = IDL.Record({
+  'success' : IDL.Opt(IDL.Bool),
+  'topped_up_amount' : IDL.Opt(IDL.Nat),
+});
 export const CartItem = IDL.Record({
   'productId' : IDL.Nat,
   'quantity' : IDL.Nat,
@@ -18,32 +29,98 @@ export const Order = IDL.Record({
   'status' : IDL.Text,
   'total' : IDL.Float64,
   'items' : IDL.Vec(CartItem),
+  'downloadLinks' : IDL.Vec(IDL.Text),
+});
+export const Category = IDL.Variant({
+  'viralReelsLibrary' : IDL.Null,
+  'editingSuite' : IDL.Null,
+  'masterclassCourses' : IDL.Null,
+  'softwareTools' : IDL.Null,
 });
 export const Product = IDL.Record({
   'id' : IDL.Nat,
   'name' : IDL.Text,
   'description' : IDL.Text,
+  'downloadUrl' : IDL.Text,
   'imageUrl' : IDL.Text,
-  'category' : IDL.Text,
+  'frequentlyBoughtTogether' : IDL.Vec(IDL.Nat),
+  'category' : Category,
+  'isMegaBundle' : IDL.Bool,
   'price' : IDL.Float64,
+  'videoPreviewUrl' : IDL.Opt(IDL.Text),
 });
 
 export const idlService = IDL.Service({
+  '_caffeineStorageBlobIsLive' : IDL.Func(
+      [IDL.Vec(IDL.Nat8)],
+      [IDL.Bool],
+      ['query'],
+    ),
+  '_caffeineStorageBlobsToDelete' : IDL.Func(
+      [],
+      [IDL.Vec(IDL.Vec(IDL.Nat8))],
+      ['query'],
+    ),
+  '_caffeineStorageConfirmBlobDeletion' : IDL.Func(
+      [IDL.Vec(IDL.Vec(IDL.Nat8))],
+      [],
+      [],
+    ),
+  '_caffeineStorageCreateCertificate' : IDL.Func(
+      [IDL.Text],
+      [_CaffeineStorageCreateCertificateResult],
+      [],
+    ),
+  '_caffeineStorageRefillCashier' : IDL.Func(
+      [IDL.Opt(_CaffeineStorageRefillInformation)],
+      [_CaffeineStorageRefillResult],
+      [],
+    ),
+  '_caffeineStorageUpdateGatewayPrincipals' : IDL.Func([], [], []),
   'addOrder' : IDL.Func([CartItem, IDL.Text], [Order], []),
   'addProduct' : IDL.Func(
-      [IDL.Text, IDL.Text, IDL.Float64, IDL.Text, IDL.Text],
+      [
+        IDL.Text,
+        IDL.Text,
+        IDL.Float64,
+        Category,
+        IDL.Text,
+        IDL.Opt(IDL.Text),
+        IDL.Text,
+        IDL.Bool,
+        IDL.Vec(IDL.Nat),
+      ],
       [IDL.Nat],
       [],
     ),
   'addToCart' : IDL.Func([IDL.Nat, IDL.Nat], [], []),
   'checkout' : IDL.Func([IDL.Text], [IDL.Opt(Order)], []),
+  'getFrequentlyBoughtTogether' : IDL.Func(
+      [IDL.Nat],
+      [IDL.Vec(Product)],
+      ['query'],
+    ),
+  'getMegaBundleProduct' : IDL.Func([], [IDL.Opt(Product)], ['query']),
+  'getOrderDownloadLinks' : IDL.Func([IDL.Nat], [IDL.Vec(IDL.Text)], ['query']),
   'getProduct' : IDL.Func([IDL.Nat], [IDL.Opt(Product)], ['query']),
+  'getProductsByCategory' : IDL.Func([Category], [IDL.Vec(Product)], ['query']),
   'searchProducts' : IDL.Func([IDL.Text], [IDL.Vec(Product)], ['query']),
 });
 
 export const idlInitArgs = [];
 
 export const idlFactory = ({ IDL }) => {
+  const _CaffeineStorageCreateCertificateResult = IDL.Record({
+    'method' : IDL.Text,
+    'blob_hash' : IDL.Text,
+  });
+  const _CaffeineStorageRefillInformation = IDL.Record({
+    'proposed_top_up_amount' : IDL.Opt(IDL.Nat),
+  });
+  const _CaffeineStorageRefillResult = IDL.Record({
+    'success' : IDL.Opt(IDL.Bool),
+    'topped_up_amount' : IDL.Opt(IDL.Nat),
+  });
   const CartItem = IDL.Record({ 'productId' : IDL.Nat, 'quantity' : IDL.Nat });
   const Order = IDL.Record({
     'id' : IDL.Nat,
@@ -51,26 +128,89 @@ export const idlFactory = ({ IDL }) => {
     'status' : IDL.Text,
     'total' : IDL.Float64,
     'items' : IDL.Vec(CartItem),
+    'downloadLinks' : IDL.Vec(IDL.Text),
+  });
+  const Category = IDL.Variant({
+    'viralReelsLibrary' : IDL.Null,
+    'editingSuite' : IDL.Null,
+    'masterclassCourses' : IDL.Null,
+    'softwareTools' : IDL.Null,
   });
   const Product = IDL.Record({
     'id' : IDL.Nat,
     'name' : IDL.Text,
     'description' : IDL.Text,
+    'downloadUrl' : IDL.Text,
     'imageUrl' : IDL.Text,
-    'category' : IDL.Text,
+    'frequentlyBoughtTogether' : IDL.Vec(IDL.Nat),
+    'category' : Category,
+    'isMegaBundle' : IDL.Bool,
     'price' : IDL.Float64,
+    'videoPreviewUrl' : IDL.Opt(IDL.Text),
   });
   
   return IDL.Service({
+    '_caffeineStorageBlobIsLive' : IDL.Func(
+        [IDL.Vec(IDL.Nat8)],
+        [IDL.Bool],
+        ['query'],
+      ),
+    '_caffeineStorageBlobsToDelete' : IDL.Func(
+        [],
+        [IDL.Vec(IDL.Vec(IDL.Nat8))],
+        ['query'],
+      ),
+    '_caffeineStorageConfirmBlobDeletion' : IDL.Func(
+        [IDL.Vec(IDL.Vec(IDL.Nat8))],
+        [],
+        [],
+      ),
+    '_caffeineStorageCreateCertificate' : IDL.Func(
+        [IDL.Text],
+        [_CaffeineStorageCreateCertificateResult],
+        [],
+      ),
+    '_caffeineStorageRefillCashier' : IDL.Func(
+        [IDL.Opt(_CaffeineStorageRefillInformation)],
+        [_CaffeineStorageRefillResult],
+        [],
+      ),
+    '_caffeineStorageUpdateGatewayPrincipals' : IDL.Func([], [], []),
     'addOrder' : IDL.Func([CartItem, IDL.Text], [Order], []),
     'addProduct' : IDL.Func(
-        [IDL.Text, IDL.Text, IDL.Float64, IDL.Text, IDL.Text],
+        [
+          IDL.Text,
+          IDL.Text,
+          IDL.Float64,
+          Category,
+          IDL.Text,
+          IDL.Opt(IDL.Text),
+          IDL.Text,
+          IDL.Bool,
+          IDL.Vec(IDL.Nat),
+        ],
         [IDL.Nat],
         [],
       ),
     'addToCart' : IDL.Func([IDL.Nat, IDL.Nat], [], []),
     'checkout' : IDL.Func([IDL.Text], [IDL.Opt(Order)], []),
+    'getFrequentlyBoughtTogether' : IDL.Func(
+        [IDL.Nat],
+        [IDL.Vec(Product)],
+        ['query'],
+      ),
+    'getMegaBundleProduct' : IDL.Func([], [IDL.Opt(Product)], ['query']),
+    'getOrderDownloadLinks' : IDL.Func(
+        [IDL.Nat],
+        [IDL.Vec(IDL.Text)],
+        ['query'],
+      ),
     'getProduct' : IDL.Func([IDL.Nat], [IDL.Opt(Product)], ['query']),
+    'getProductsByCategory' : IDL.Func(
+        [Category],
+        [IDL.Vec(Product)],
+        ['query'],
+      ),
     'searchProducts' : IDL.Func([IDL.Text], [IDL.Vec(Product)], ['query']),
   });
 };

@@ -49,38 +49,38 @@ export default {
                     DEFAULT: 'oklch(var(--card))',
                     foreground: 'oklch(var(--card-foreground))'
                 },
-                deepTeal: {
-                    100: 'oklch(var(--deepTeal-100))',
-                    200: 'oklch(var(--deepTeal-200))',
-                    300: 'oklch(var(--deepTeal-300))',
-                    400: 'oklch(var(--deepTeal-400))',
-                    500: 'oklch(var(--deepTeal-500))',
-                    600: 'oklch(var(--deepTeal-600))',
-                    700: 'oklch(var(--deepTeal-700))',
-                    800: 'oklch(var(--deepTeal-800))',
-                    900: 'oklch(var(--deepTeal-900))',
+                neonBlue: {
+                    100: 'oklch(var(--neonBlue-100))',
+                    200: 'oklch(var(--neonBlue-200))',
+                    300: 'oklch(var(--neonBlue-300))',
+                    400: 'oklch(var(--neonBlue-400))',
+                    500: 'oklch(var(--neonBlue-500))',
+                    600: 'oklch(var(--neonBlue-600))',
+                    700: 'oklch(var(--neonBlue-700))',
+                    800: 'oklch(var(--neonBlue-800))',
+                    900: 'oklch(var(--neonBlue-900))',
                 },
-                warmGold: {
-                    100: 'oklch(var(--warmGold-100))',
-                    200: 'oklch(var(--warmGold-200))',
-                    300: 'oklch(var(--warmGold-300))',
-                    400: 'oklch(var(--warmGold-400))',
-                    500: 'oklch(var(--warmGold-500))',
-                    600: 'oklch(var(--warmGold-600))',
-                    700: 'oklch(var(--warmGold-700))',
-                    800: 'oklch(var(--warmGold-800))',
-                    900: 'oklch(var(--warmGold-900))',
+                electricPurple: {
+                    100: 'oklch(var(--electricPurple-100))',
+                    200: 'oklch(var(--electricPurple-200))',
+                    300: 'oklch(var(--electricPurple-300))',
+                    400: 'oklch(var(--electricPurple-400))',
+                    500: 'oklch(var(--electricPurple-500))',
+                    600: 'oklch(var(--electricPurple-600))',
+                    700: 'oklch(var(--electricPurple-700))',
+                    800: 'oklch(var(--electricPurple-800))',
+                    900: 'oklch(var(--electricPurple-900))',
                 },
-                charcoalGray: {
-                    100: 'oklch(var(--charcoalGray-100))',
-                    200: 'oklch(var(--charcoalGray-200))',
-                    300: 'oklch(var(--charcoalGray-300))',
-                    400: 'oklch(var(--charcoalGray-400))',
-                    500: 'oklch(var(--charcoalGray-500))',
-                    600: 'oklch(var(--charcoalGray-600))',
-                    700: 'oklch(var(--charcoalGray-700))',
-                    800: 'oklch(var(--charcoalGray-800))',
-                    900: 'oklch(var(--charcoalGray-900))',
+                darkCharcoal: {
+                    100: 'oklch(var(--darkCharcoal-100))',
+                    200: 'oklch(var(--darkCharcoal-200))',
+                    300: 'oklch(var(--darkCharcoal-300))',
+                    400: 'oklch(var(--darkCharcoal-400))',
+                    500: 'oklch(var(--darkCharcoal-500))',
+                    600: 'oklch(var(--darkCharcoal-600))',
+                    700: 'oklch(var(--darkCharcoal-700))',
+                    800: 'oklch(var(--darkCharcoal-800))',
+                    900: 'oklch(var(--darkCharcoal-900))',
                 },
             },
             borderRadius: {
@@ -89,14 +89,16 @@ export default {
                 sm: 'calc(var(--radius) - 4px)'
             },
             boxShadow: {
-                xs: '0 1px 2px 0 rgba(0,0,0,0.05)',
-                'depth-sm': '0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06)',
-                'depth-md': '0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.1)',
-                'depth-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1)',
-                'depth-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1)',
+                xs: '0 1px 2px 0 rgba(0,0,0,0.1)',
+                'depth-sm': '0 2px 4px -1px rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.2)',
+                'depth-md': '0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3)',
+                'depth-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3)',
+                'depth-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4)',
+                'neon-blue': '0 0 20px rgba(0, 243, 255, 0.3), 0 0 40px rgba(0, 243, 255, 0.1)',
+                'neon-purple': '0 0 20px rgba(189, 0, 255, 0.3), 0 0 40px rgba(189, 0, 255, 0.1)',
             },
             fontFamily: {
-                sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                sans: ['Poppins', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
             },
             keyframes: {
                 'accordion-down': {
@@ -106,11 +108,16 @@ export default {
                 'accordion-up': {
                     from: { height: 'var(--radix-accordion-content-height)' },
                     to: { height: '0' }
+                },
+                'pulse-glow': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.6' }
                 }
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
-                'accordion-up': 'accordion-up 0.2s ease-out'
+                'accordion-up': 'accordion-up 0.2s ease-out',
+                'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
             }
         }
     },

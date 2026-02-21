@@ -2,121 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-implement-a-3d-interactive-homepage-using-react-three-fiber-with-ultra-realistic-rendering-including-lighting-effects-shadows-and-smooth-camera-transitions",
-      "featureTitle": "Implement a 3D interactive homepage using React Three Fiber with ultra-realistic rendering, including lighting effects, shadows, and smooth camera transitions",
+      "featureId": "feature-replace-the-existing-color-scheme-with-a-dark-cyberpunk-aesthetic-dark-charcoal-or-deep-matte-black-background-1a1a1a-neon-blue-accents-00f3ff-for-primary-buttons-and-highlights-electric-purple-accents-bd00ff-for-secondary-buttons-and-hover-states-maintaining-the-existing-deep-teal-warm-gold-and-charcoal-gray-colors-only-for-subtle-gradients-where-appropriate",
+      "featureTitle": "Replace the existing color scheme with a dark cyberpunk aesthetic: dark charcoal or deep matte black background (#1a1a1a), neon blue accents (#00f3ff) for primary buttons and highlights, electric purple accents (#bd00ff) for secondary buttons and hover states, maintaining the existing deep teal, warm gold, and charcoal gray colors only for subtle gradients where appropriate",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/Hero3D.tsx",
-        "frontend/src/components/Scene3D.tsx",
-        "frontend/src/index.css",
-        "frontend/src/pages/Home.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-product-catalog-system-with-browsing-filtering-and-search-capabilities-for-digital-marketing-products-and-services",
-      "featureTitle": "Create a product catalog system with browsing, filtering, and search capabilities for digital marketing products and services",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/ProductCard.tsx",
-        "frontend/src/components/ProductFilters.tsx",
-        "frontend/src/components/ProductGrid.tsx",
-        "frontend/src/components/ProductSearch.tsx",
-        "frontend/src/pages/ProductDetail.tsx",
-        "frontend/src/pages/Products.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-a-shopping-cart-system-where-users-can-add-products-update-quantities-and-remove-items",
-      "featureTitle": "Build a shopping cart system where users can add products, update quantities, and remove items",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/AddToCartButton.tsx",
-        "frontend/src/components/CartDrawer.tsx",
-        "frontend/src/components/CartItem.tsx",
-        "frontend/src/components/CartSummary.tsx",
-        "frontend/src/components/Navigation.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-checkout-flow-with-order-summary-customer-information-collection-and-order-confirmation",
-      "featureTitle": "Create a checkout flow with order summary, customer information collection, and order confirmation",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/CheckoutForm.tsx",
-        "frontend/src/components/OrderSummary.tsx",
-        "frontend/src/pages/Checkout.tsx",
-        "frontend/src/pages/OrderConfirmation.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-design-and-implement-product-display-cards-that-integrate-into-the-3d-environment-showing-products-in-an-immersive-3d-space-with-interactive-elements",
-      "featureTitle": "Design and implement product display cards that integrate into the 3D environment, showing products in an immersive 3D space with interactive elements",
-      "files": [
-        "frontend/src/pages/Home.tsx",
-        "frontend/src/pages/Products.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-7"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-cohesive-visual-design-with-a-modern-professional-aesthetic-featuring-a-sophisticated-color-palette-of-deep-teals-warm-golds-and-charcoal-grays-elegant-typography-with-clean-sans-serif-fonts-and-a-premium-layout-that-emphasizes-depth-and-dimension-through-layering-and-strategic-use-of-shadows-and-highlights",
-      "featureTitle": "Create a cohesive visual design with a modern, professional aesthetic featuring a sophisticated color palette of deep teals, warm golds, and charcoal grays, elegant typography with clean sans-serif fonts, and a premium layout that emphasizes depth and dimension through layering and strategic use of shadows and highlights",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/Layout.tsx",
         "frontend/src/index.css",
         "frontend/tailwind.config.js"
       ],
@@ -125,10 +13,230 @@
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
       ],
       "testIds": [
-        "REQ-8"
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-hero-section-headline-to-unlock-your-creative-potential-5000-premium-assets-for-the-price-of-a-pizza-and-subheadline-to-instant-download-lifetime-access-100-secure-with-the-cta-button-text-changed-to-shop-all-bundles",
+      "featureTitle": "Update the hero section headline to 'Unlock Your Creative Potential: 5000+ Premium Assets for the Price of a Pizza' and subheadline to 'Instant Download. Lifetime Access. 100% Secure.' with the CTA button text changed to 'Shop All Bundles'",
+      "files": [
+        "frontend/src/components/Hero3D.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-centered-search-bar-to-the-navigation-header-with-placeholder-text-search-for-courses-bundles-positioned-between-the-logo-and-cart-icon",
+      "featureTitle": "Add a centered search bar to the navigation header with placeholder text 'Search for courses, bundles...' positioned between the logo and cart icon",
+      "files": [
+        "frontend/src/components/Navigation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-reorganize-product-categories-into-four-specific-categories-viral-reels-library-ai-motivation-luxury-lifestyle-editing-suite-luts-prpro-templates-sfx-masterclass-courses-marketing-coding-ai-and-software-tools-updating-both-the-backend-product-data-structure-and-frontend-category-filters",
+      "featureTitle": "Reorganize product categories into four specific categories: 'Viral Reels Library' (AI Motivation, Luxury Lifestyle), 'Editing Suite' (LUTs, PRPRO Templates, SFX), 'Masterclass Courses' (Marketing, Coding, AI), and 'Software Tools', updating both the backend product data structure and frontend category filters",
+      "files": [
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/components/ProductFilters.tsx",
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-video-preview-support-to-product-cards-and-product-detail-pages-with-auto-play-on-hover-functionality-storing-video-urls-in-the-backend-product-data-structure",
+      "featureTitle": "Add video preview support to product cards and product detail pages with auto-play on hover functionality, storing video URLs in the backend product data structure",
+      "files": [
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-guest-checkout-flow-that-allows-users-to-complete-purchases-without-creating-an-account-or-logging-in-removing-any-authentication-requirements-from-the-checkout-process",
+      "featureTitle": "Implement guest checkout flow that allows users to complete purchases without creating an account or logging in, removing any authentication requirements from the checkout process",
+      "files": [
+        "frontend/src/components/CheckoutForm.tsx",
+        "frontend/src/pages/Checkout.tsx",
+        "frontend/src/pages/OrderConfirmation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-mega-bundle-section-on-the-homepage-displaying-an-all-in-one-product-bundle-with-prominent-upsell-messaging-and-visual-emphasis-positioned-between-the-hero-section-and-featured-products",
+      "featureTitle": "Create a 'Mega Bundle' section on the homepage displaying an all-in-one product bundle with prominent upsell messaging and visual emphasis, positioned between the hero section and featured products",
+      "files": [
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-frequently-bought-together-recommendation-section-to-product-detail-pages-showing-complementary-products-with-a-one-click-option-to-add-the-bundle-to-cart",
+      "featureTitle": "Add 'Frequently Bought Together' recommendation section to product detail pages showing complementary products with a one-click option to add the bundle to cart",
+      "files": [
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-product-detail-page-layout-to-show-crossed-out-original-price-next-to-sale-price-add-trust-badges-for-secure-payment-and-instant-delivery-and-make-the-add-to-cart-button-sticky-when-scrolling",
+      "featureTitle": "Update product detail page layout to show crossed-out original price next to sale price, add trust badges for 'Secure Payment' and 'Instant Delivery', and make the add-to-cart button sticky when scrolling",
+      "files": [
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-downloadurl-field-to-the-backend-product-data-structure-and-implement-a-digital-download-delivery-system-where-completed-orders-provide-users-with-download-links-to-access-their-purchased-digital-products",
+      "featureTitle": "Add a downloadUrl field to the backend product data structure and implement a digital download delivery system where completed orders provide users with download links to access their purchased digital products",
+      "files": [
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/OrderConfirmation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-dmca-copyright-page-accessible-from-the-footer-with-legal-disclaimers-stating-products-are-for-educational-purposes-information-about-gpl-licensing-for-software-and-resell-rights-bundle-policies",
+      "featureTitle": "Create a DMCA/Copyright page accessible from the footer with legal disclaimers stating products are for educational purposes, information about GPL licensing for software, and resell rights bundle policies",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/pages/DMCAPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-bullet-point-product-descriptions-to-product-detail-pages-showing-exactly-what-files-are-included-in-each-product-e-g-file-size-format-watermark-status",
+      "featureTitle": "Add bullet-point product descriptions to product detail pages showing exactly what files are included in each product (e.g., file size, format, watermark status)",
+      "files": [
+        "frontend/src/pages/ProductDetail.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-20"
       ],
       "confidence": "high"
     }

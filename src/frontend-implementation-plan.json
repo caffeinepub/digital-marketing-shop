@@ -1,251 +1,255 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "3D Digital Marketing Website with Shopping Functionality - Frontend Implementation",
+  "title": "Transform marketplace into cyberpunk-themed digital product store with video previews, mega bundles, and guest checkout",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Implement 3D interactive homepage with ultra-realistic rendering using React Three Fiber",
+      "id": "REQ-9",
+      "summary": "Replace existing color scheme with dark cyberpunk aesthetic using neon blue and electric purple accents",
       "acceptanceCriteria": [
-        "3D scene renders with realistic lighting and shadows",
-        "Camera movements are smooth and responsive to user interaction",
-        "Scene includes interactive 3D elements that respond to mouse hover and click"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Scene3D.tsx",
-          "operation": "create",
-          "description": "Create main 3D scene component using React Three Fiber (@react-three/fiber, @react-three/drei) with ultra-realistic rendering including PBR materials, HDR environment maps, realistic lighting with shadows (directional, ambient, point lights), and smooth camera controls with orbital and animated transitions. Include interactive 3D elements that respond to mouse hover and click events. Reference the generated hero background image at frontend/public/assets/generated/hero-bg.dim_1920x1080.png for textures or environment inspiration."
-        },
-        {
-          "path": "frontend/src/components/Hero3D.tsx",
-          "operation": "create",
-          "description": "Create 3D hero section component that uses Scene3D and integrates the generated hero background image from frontend/public/assets/generated/hero-bg.dim_1920x1080.png as a textured plane or environment backdrop. Implement smooth camera animations that introduce the scene and highlight key 3D elements."
-        },
-        {
-          "path": "frontend/src/pages/Home.tsx",
-          "operation": "create",
-          "description": "Create home page component that renders Hero3D as the main interactive 3D section. Include sections for featured services using icons from frontend/public/assets/generated/services-icons.dim_800x400.png and featured products using frontend/public/assets/generated/featured-banner.dim_1200x600.png as static assets."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire the Home page component into the app router, setting it as the root route ('/') and ensuring the Canvas from React Three Fiber is properly initialized with appropriate settings for performance and visual quality."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add global styles that support the 3D canvas rendering, including full viewport height for immersive scenes, and ensure the color palette of deep teals, warm golds, and charcoal grays is defined as CSS custom properties for consistent theming throughout the application."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Create product catalog with browsing, filtering, and search capabilities",
-      "acceptanceCriteria": [
-        "Products can be displayed in a grid or list view",
-        "Users can filter products by category, price range, and other attributes",
-        "Search functionality returns relevant results",
-        "Product details include images, descriptions, and pricing"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/hooks/useProducts.ts",
-          "operation": "create",
-          "description": "Create React Query hook to fetch products from backend using the searchProducts method from backend interface. Support caching, automatic refetching, and loading/error states."
-        },
-        {
-          "path": "frontend/src/hooks/useProduct.ts",
-          "operation": "create",
-          "description": "Create React Query hook to fetch a single product by ID using the getProduct method from backend interface. Handle null responses appropriately."
-        },
-        {
-          "path": "frontend/src/components/ProductCard.tsx",
-          "operation": "create",
-          "description": "Create product card component displaying product image, name, description, price, and category. Use shadcn/ui Card component for consistent styling. Include add-to-cart button."
-        },
-        {
-          "path": "frontend/src/components/ProductGrid.tsx",
-          "operation": "create",
-          "description": "Create product grid component that displays products in a responsive grid layout using Tailwind CSS. Support both grid and list view modes."
-        },
-        {
-          "path": "frontend/src/components/ProductFilters.tsx",
-          "operation": "create",
-          "description": "Create filter component with controls for category selection, price range sliders, and other product attributes. Use shadcn/ui form components (Select, Slider) for consistent UI."
-        },
-        {
-          "path": "frontend/src/components/ProductSearch.tsx",
-          "operation": "create",
-          "description": "Create search input component that calls the searchProducts backend method with the search term. Use shadcn/ui Input component with search icon and debouncing for performance."
-        },
-        {
-          "path": "frontend/src/pages/Products.tsx",
-          "operation": "create",
-          "description": "Create products page that combines ProductSearch, ProductFilters, and ProductGrid components. Manage filter and search state, and pass filtered/searched results to the grid. Implement client-side filtering for categories and price ranges after fetching all products."
-        },
-        {
-          "path": "frontend/src/pages/ProductDetail.tsx",
-          "operation": "create",
-          "description": "Create product detail page that fetches a single product using useProduct hook and displays comprehensive product information including large image, full description, price, category, and add-to-cart functionality."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire the Products page at route '/products' and ProductDetail page at route '/products/:id' into the app router."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Build shopping cart system with add, update quantity, and remove capabilities",
-      "acceptanceCriteria": [
-        "Users can add products to cart with specified quantities",
-        "Cart displays all added items with prices and subtotals",
-        "Users can update quantities or remove items from cart",
-        "Cart total is calculated correctly including all items"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/hooks/useCart.ts",
-          "operation": "create",
-          "description": "Create React Query hook to manage cart state using the addToCart backend method. Implement optimistic updates for adding items, updating quantities, and removing items. Store cart items in React Query cache and calculate totals on the frontend based on product prices."
-        },
-        {
-          "path": "frontend/src/components/CartItem.tsx",
-          "operation": "create",
-          "description": "Create cart item component displaying product name, image, price, quantity controls (increment/decrement buttons), subtotal, and remove button. Use shadcn/ui Button components."
-        },
-        {
-          "path": "frontend/src/components/CartSummary.tsx",
-          "operation": "create",
-          "description": "Create cart summary component showing subtotal, any applicable fees, and grand total. Use shadcn/ui Card component for styling."
-        },
-        {
-          "path": "frontend/src/components/CartDrawer.tsx",
-          "operation": "create",
-          "description": "Create cart drawer/sidebar component using shadcn/ui Sheet component that displays all cart items using CartItem components and CartSummary. Include checkout button that navigates to checkout page."
-        },
-        {
-          "path": "frontend/src/components/AddToCartButton.tsx",
-          "operation": "create",
-          "description": "Create reusable add-to-cart button component that calls the useCart hook to add items. Show loading state during addition and success feedback. Use shadcn/ui Button with appropriate styling."
-        },
-        {
-          "path": "frontend/src/components/Navigation.tsx",
-          "operation": "create",
-          "description": "Create navigation component with cart icon badge showing item count and triggering CartDrawer. Include links to Home and Products pages. Style with the deep teal, warm gold, and charcoal gray color palette."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire the Navigation component into the main app layout so it appears on all pages. Ensure CartDrawer is accessible from the navigation."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Create checkout flow with order summary, customer information collection, and order confirmation",
-      "acceptanceCriteria": [
-        "Checkout displays complete order summary with itemized list and total",
-        "Form collects necessary customer information (name, email, shipping address)",
-        "Order is saved to backend with unique order ID and timestamp",
-        "Confirmation page displays order details and order number"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/hooks/useCheckout.ts",
-          "operation": "create",
-          "description": "Create React Query mutation hook to submit checkout using the checkout backend method. Pass customer info as JSON string and handle the returned Order object or null response."
-        },
-        {
-          "path": "frontend/src/components/CheckoutForm.tsx",
-          "operation": "create",
-          "description": "Create checkout form component using shadcn/ui Form components to collect customer name, email, and shipping address (street, city, state, postal code, country). Implement validation using react-hook-form with appropriate validation rules."
-        },
-        {
-          "path": "frontend/src/components/OrderSummary.tsx",
-          "operation": "create",
-          "description": "Create order summary component displaying all cart items with quantities, individual prices, subtotals, and grand total. Use shadcn/ui Table or Card components for layout."
-        },
-        {
-          "path": "frontend/src/pages/Checkout.tsx",
-          "operation": "create",
-          "description": "Create checkout page that displays OrderSummary and CheckoutForm side-by-side or stacked on mobile. On form submission, call useCheckout hook with customer information JSON. On success, navigate to order confirmation page with order ID."
-        },
-        {
-          "path": "frontend/src/pages/OrderConfirmation.tsx",
-          "operation": "create",
-          "description": "Create order confirmation page that receives order ID from navigation state and displays order number, timestamp, customer information, itemized order details, and total. Include success message and link to return to products page."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire the Checkout page at route '/checkout' and OrderConfirmation page at route '/order-confirmation/:orderId' into the app router."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Design product display cards that integrate into the 3D environment with interactive elements",
-      "acceptanceCriteria": [
-        "Products are displayed as 3D cards or objects within the Three.js scene",
-        "Product cards are interactive and respond to user input",
-        "Clicking a product opens detailed view or adds to cart",
-        "3D product displays maintain visual quality and performance"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Product3DCard.tsx",
-          "operation": "create",
-          "description": "Create 3D product card component using React Three Fiber that renders products as 3D cards or floating panels within the Three.js scene. Include product image as texture, use react-three/drei's Html component to overlay product name and price, and implement hover effects (scaling, rotation, glow) and click handlers that navigate to product detail or add to cart. Optimize geometry and textures for performance."
-        },
-        {
-          "path": "frontend/src/components/Product3DGrid.tsx",
-          "operation": "create",
-          "description": "Create 3D product grid component that arranges multiple Product3DCard components in 3D space with proper spacing and layout. Implement smooth transitions when products load or filter state changes. Use instancing or other optimization techniques for rendering many products."
-        },
-        {
-          "path": "frontend/src/pages/Home.tsx",
-          "operation": "modify",
-          "description": "Integrate Product3DGrid into the Home page's 3D scene to showcase featured products within the immersive 3D environment. Fetch featured products using useProducts hook and pass to Product3DGrid."
-        },
-        {
-          "path": "frontend/src/pages/Products.tsx",
-          "operation": "modify",
-          "description": "Add option to view products in 3D mode using Product3DGrid alongside the traditional 2D ProductGrid. Implement view toggle button that switches between 2D and 3D product browsing experiences."
-        }
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "summary": "Create cohesive visual design with modern professional aesthetic featuring deep teals, warm golds, and charcoal grays with elegant typography and premium layout emphasizing depth",
-      "acceptanceCriteria": [
-        "Color scheme consistently uses deep teals, warm golds, and charcoal grays throughout the interface",
-        "Typography is clean and modern with appropriate hierarchy",
-        "Layout creates depth through layering, shadows, and visual separation",
-        "Overall aesthetic feels premium and professional"
+        "Background colors changed to dark charcoal/matte black throughout the application",
+        "Primary action buttons use neon blue (#00f3ff)",
+        "Secondary actions and hover states use electric purple (#bd00ff)",
+        "Color changes applied consistently across all pages and components"
       ],
       "file_operations": [
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Define CSS custom properties for the color palette: deep teal (#0D4F4F, #0A7B7B), warm gold (#D4AF37, #F4D03F), charcoal gray (#2C2C2C, #4A4A4A). Add typography styles using modern sans-serif font stacks with appropriate font weights (400, 500, 600, 700) and line heights. Define utility classes for shadows, depth layers, and transitions."
+          "description": "Replace existing color variables with cyberpunk theme colors: set background to #1a1a1a (dark charcoal/matte black), primary colors to #00f3ff (neon blue), and secondary colors to #bd00ff (electric purple). Update all CSS custom properties to support the new color scheme throughout the application."
         },
         {
           "path": "frontend/tailwind.config.js",
           "operation": "modify",
-          "description": "Extend Tailwind configuration to include custom color palette (deepTeal, warmGold, charcoalGray with multiple shades), custom font families, extended shadow utilities for depth effects, and custom spacing/sizing scales that support layered layouts. Configure theme to support premium visual aesthetics."
+          "description": "Update Tailwind color palette to include cyberpunk theme: add neonBlue (#00f3ff) and electricPurple (#bd00ff) to the theme.extend.colors section. Replace or extend existing deepTeal, warmGold, and charcoalGray with the new cyberpunk color scheme while maintaining subtle gradient support."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Update hero section with new headline, subheadline, and CTA button text",
+      "acceptanceCriteria": [
+        "Hero section displays the new headline with emphasis on creative potential",
+        "Subheadline includes instant download, lifetime access, and security messaging",
+        "CTA button text reads 'Shop All Bundles' and navigates to products page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero3D.tsx",
+          "operation": "modify",
+          "description": "Replace the hero headline with 'Unlock Your Creative Potential: 5000+ Premium Assets for the Price of a Pizza' and subheadline with 'Instant Download. Lifetime Access. 100% Secure.' Update the primary CTA button text to 'Shop All Bundles' while maintaining navigation to the products page. Ensure visual emphasis and gradient effects on the new headline."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Add centered search bar to navigation header with placeholder text",
+      "acceptanceCriteria": [
+        "Search bar appears in the center of the navigation header",
+        "Placeholder text reads 'Search for courses, bundles...'",
+        "Search bar integrates with existing product search functionality",
+        "Layout remains responsive on mobile devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "modify",
+          "description": "Add a centered search bar between the logo and cart icon. Integrate the ProductSearch component with placeholder text 'Search for courses, bundles...' and implement search navigation to the products page with search query parameter. Ensure responsive layout that hides or collapses the search bar on mobile devices."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Update frontend category filters to display four new product categories",
+      "acceptanceCriteria": [
+        "Frontend category filter dropdown shows all four categories",
+        "Category badges on product cards display the updated category names"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProductFilters.tsx",
+          "operation": "modify",
+          "description": "Update category filter dropdown to display the four new categories: 'Viral Reels Library', 'Editing Suite', 'Masterclass Courses', and 'Software Tools'. Map these to the backend Category enum values (viralReelsLibrary, editingSuite, masterclassCourses, softwareTools) and ensure proper filtering integration."
         },
         {
-          "path": "frontend/src/components/Layout.tsx",
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Update category badge display to show the new category names with proper formatting. Map backend category enum values to user-friendly labels: viralReelsLibrary → 'Viral Reels Library', editingSuite → 'Editing Suite', masterclassCourses → 'Masterclass Courses', softwareTools → 'Software Tools'."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Update category badge display on the product detail page to show the new category names with the same mapping as ProductCard. Ensure consistent category label formatting across the application."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Add video preview support with auto-play on hover functionality",
+      "acceptanceCriteria": [
+        "Product cards display video preview when hovering over the card area",
+        "Product detail page shows video preview in a carousel that auto-plays on hover",
+        "Video elements include proper controls and fallback to static images when no video is available"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Add video preview functionality that auto-plays when hovering over the product card. Use the videoPreviewUrl field from the Product type. Implement a video element that replaces the static image on hover, with muted auto-play, loop, and proper fallback to the imageUrl when no video is available. Include loading states and error handling."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Add video preview carousel or media viewer that displays the product's videoPreviewUrl. Implement auto-play on hover functionality with muted playback, loop, and video controls. Include fallback to static image display when videoPreviewUrl is not available. Ensure the video element is properly sized and responsive."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Implement guest checkout flow without authentication requirements",
+      "acceptanceCriteria": [
+        "Users can access checkout page without authentication",
+        "Checkout form collects email for order confirmation without requiring account creation",
+        "Order confirmation page is accessible without login",
+        "No authentication prompts appear during the checkout flow"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Checkout.tsx",
+          "operation": "modify",
+          "description": "Remove any authentication checks or Internet Identity requirements from the checkout page. Ensure the checkout process works entirely as a guest flow without requiring login or account creation. Verify that the CheckoutForm collects email and shipping information that is passed to the backend checkout capability."
+        },
+        {
+          "path": "frontend/src/pages/OrderConfirmation.tsx",
+          "operation": "modify",
+          "description": "Ensure the order confirmation page is accessible without authentication. Remove any login prompts or identity checks. Display order details and download links based on the orderId parameter from the route without requiring user authentication."
+        },
+        {
+          "path": "frontend/src/components/CheckoutForm.tsx",
+          "operation": "modify",
+          "description": "Ensure the checkout form prominently collects email address as a required field for guest checkout. Update form validation and labels to indicate that no account creation is required. Focus on collecting minimal customer information (name, email, optional address) for order fulfillment."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Create Mega Bundle section on homepage with prominent upsell messaging",
+      "acceptanceCriteria": [
+        "Homepage includes a dedicated Mega Bundle section with eye-catching design",
+        "Section displays the bundle product with special pricing and value proposition",
+        "Section appears prominently on homepage with clear call-to-action"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Add a prominent Mega Bundle section between the hero section and featured products. Fetch the mega bundle product using the getMegaBundleProduct backend capability. Display the bundle with eye-catching cyberpunk styling, special pricing emphasis, value proposition messaging, and a clear CTA button that navigates to the bundle's product detail page or adds it to cart. Use neon blue and electric purple accents for visual emphasis."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add a React Query hook for fetching the mega bundle product using the getMegaBundleProduct backend capability. Export useMegaBundleQuery hook that returns the mega bundle product data with loading and error states."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Add Frequently Bought Together recommendation section to product detail pages",
+      "acceptanceCriteria": [
+        "Product detail page displays related products in a 'Frequently Bought Together' section",
+        "Section includes a bundled price calculation showing savings",
+        "Users can add all recommended products to cart with one click"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Add a 'Frequently Bought Together' section below the main product information. Fetch related products using the getFrequentlyBoughtTogether backend capability with the current productId. Display recommended products with images, names, and prices. Calculate and display the bundled price with savings. Include a prominent button to add all recommended products to cart with one click using the cart store's addItem method."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add a React Query hook for fetching frequently bought together products using the getFrequentlyBoughtTogether backend capability. Export useFrequentlyBoughtTogetherQuery hook that accepts a productId parameter and returns related products with loading and error states."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Update product detail page with crossed-out pricing, trust badges, and sticky add-to-cart button",
+      "acceptanceCriteria": [
+        "Product price displays with original price struck through and sale price emphasized",
+        "Trust badge icons for secure payment and instant delivery appear near the add-to-cart button",
+        "Add-to-cart button becomes sticky and remains visible when scrolling down the page",
+        "Layout maintains visual hierarchy with price and trust elements prominently displayed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Update the pricing display to show a crossed-out original price (calculated as price * 1.5 or similar markup) next to the sale price with visual emphasis. Add trust badge images below the price using the generated trust badge assets (frontend/public/assets/generated/trust-badge-secure.dim_64x64.png and frontend/public/assets/generated/trust-badge-instant.dim_64x64.png). Implement sticky positioning for the add-to-cart button using CSS position:sticky or a scroll listener, ensuring it remains visible when scrolling down the page. Verify the trust badge image paths reference the generated assets exactly."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Implement digital download delivery system showing download links after order completion",
+      "acceptanceCriteria": [
+        "Order confirmation page displays download links for purchased products",
+        "Download links are only accessible after successful order completion"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/OrderConfirmation.tsx",
+          "operation": "modify",
+          "description": "Display download links for purchased products on the order confirmation page. Fetch download links using the getOrderDownloadLinks backend capability with the orderId from the route parameter. Display each download link as a clickable button or link that opens the external URL (Google Drive, Mega.nz, etc.) in a new tab. Include clear instructions for accessing the digital products and emphasize that the links provide lifetime access."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add a React Query hook for fetching order download links using the getOrderDownloadLinks backend capability. Export useOrderDownloadLinksQuery hook that accepts an orderId parameter and returns the array of download link URLs with loading and error states."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Create DMCA/Copyright page with legal disclaimers",
+      "acceptanceCriteria": [
+        "Footer includes link to DMCA/Copyright page",
+        "Page contains educational purpose disclaimer",
+        "Page explains GPL licensing for applicable software",
+        "Page describes resell rights bundle policies and legal usage terms"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/DMCAPage.tsx",
           "operation": "create",
-          "description": "Create main layout component that wraps all pages with consistent structure including Navigation, footer, and appropriate spacing. Apply layering techniques with shadows and background gradients to create depth. Use the defined color palette throughout."
+          "description": "Create a new DMCA/Copyright page component that displays legal disclaimers and policies. Include sections for: educational purpose disclaimer ('This software is for educational purposes'), GPL licensing information for software products, resell rights bundle policies, and general legal usage terms. Use clear headings, formatted text, and the cyberpunk theme styling. Structure the content in an accessible and readable format."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Wrap all routes with the Layout component to ensure consistent design and depth throughout the application."
+          "description": "Add a new route for the DMCA/Copyright page at path '/dmca' that renders the DMCAPage component. Ensure the route is registered in the TanStack Router configuration and accessible without authentication."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Add a link to the DMCA/Copyright page in the footer's company links section. Use the link text 'DMCA / Copyright' and navigate to '/dmca'. Position it prominently among other legal/informational links to ensure visibility and compliance."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Add bullet-point product descriptions showing included files and specifications",
+      "acceptanceCriteria": [
+        "Product detail page displays description as formatted bullet points",
+        "Each bullet point clearly states what is included (file size, format, quality)",
+        "Description section is visually distinct and easy to scan"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Update the product description display to render as formatted bullet points instead of plain text. Parse the product.description field to extract or display bullet points (handle newlines, hyphens, or asterisks as list items). If the description is plain text, present it in a bulleted list format. Ensure each bullet point is visually distinct, easy to scan, and includes details about file size, format, watermark status, and other specifications. Style the list with cyberpunk theme colors and appropriate spacing."
         }
       ]
     }
